@@ -1,9 +1,9 @@
 {
     "name": "travis83bui/yii2-blog",
 	"description":"A blog module.",
-	"keywords":["yii2, travis83bui, blog"],
+	"keywords": ["blog", "yii2", "travis83bui"],
 	"type": "yii2-extension",
-	"licences":"MIT",
+	"license": "MIT",
 	"authors": [
 		{
 			"name": "Travis Bui",
@@ -16,7 +16,7 @@
     },
 	"autoload": {
 		"psr-4": {
-			"travis83bui\\user\\": ""
+			"travis83bui\\blog\\": ""
 		}
 	}
 }
