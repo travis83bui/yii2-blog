@@ -1,0 +1,22 @@
+{
+    "name": "travis83bui/yii2-blog",
+	"description":"A blog module.",
+	"keywords":"yii2, travis83bui, blog",
+	"type": "yii2-extension",
+	"licences":"MIT",
+	"authors": [
+		{
+			"name": "Travis Bui",
+			"email": "travis83bui@gmail.com",
+			"homepage": "http://vinhphuc.name.vn"
+		}
+	],
+	"require": {
+        "yiisoft/yii2": "*"
+    },
+	"autoload": {
+		"psr-4": {
+			"travis83bui\\user\\": ""
+		}
+	}
+}
