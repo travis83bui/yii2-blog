@@ -1,11 +1,11 @@
 <?php
-namespace common\modules\blog\controllers;
+namespace travis83bui\blog\controllers;
 use \Yii;
 use \yii\web\Controller;
 use \yii\data\Pagination;
 
-use common\blog\models\Post;
-use common\blog\models\Comment;
+use travis83bui\blogmodels\Post;
+use travis83bui\blogmodels\Comment;
 
 class CommentController extends Controller
 {

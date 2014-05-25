@@ -1,5 +1,5 @@
 <?php
-namespace travis83bui\blog\blog\models;
+namespace travis83bui\blog\models;
 use \yii\db\ActiveRecord;
 
 class Lookup extends ActiveRecord

@@ -1,5 +1,5 @@
 <?php
-namespace common\modules\blog;
+namespace travis83bui\blog;
 
 
 class Module extends \yii\base\Module {

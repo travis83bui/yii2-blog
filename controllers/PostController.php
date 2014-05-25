@@ -44,14 +44,15 @@ class PostController extends Controller
 
 	public function actionCreate()
 	{
+			
 		$model=new Post();
-		/*if ($this->populate($_POST, $model) && $model->save()) {
+		if ($model->load(\Yii::$app->getRequest()->post()) && $model->save()) {
 			\Yii::$app->response->redirect(array('view','id'=>$model->id));
-		}*/
-
-		echo $this->render('@app/views/modules/blog/views/post/create',array(
-			'model'=>$model,
-		));
+		}
+		
+		echo $this->render('@app/views/modules/blog/views/post/create'
+			,array('model'=>$model)
+		);
 	}
 
 	public function actionUpdate($id)

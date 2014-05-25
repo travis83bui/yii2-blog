@@ -1,6 +1,6 @@
 <?php
 namespace travis83bui\blog\models;
-use \common\models\User;
+//use \common\models\User;
 use \yii\db\ActiveRecord;
 use \yii\helpers\Html;
 use \Yii;
@@ -23,16 +23,16 @@ class Post extends ActiveRecord
 	{
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
-		return array(
-			array('title, content, status', 'required'),
-			array('status', 'in', 'range'=>array(1,2,3)),
-			array('title', 'string', 'max'=>128),
-			array('image','file','types'=>'jpg, gif, png'),
-			array('tags', 'match', 'pattern'=>'/^[\w\s,]+$/', 'message'=>'Tags can only contain word characters.'),
-			array('tags', 'normalizeTags'),
-
-			//array('title, status', 'safe', 'on'=>'search'),
-		);
+		return [
+			['title','required'],
+			['content','required'],
+			['status','required'],
+			['status', 'in', 'range'=>[1,2,3]],
+			['title', 'string', 'max'=>128],
+			['image','file','types'=>'jpg, gif, png'],
+			['tags', 'match', 'pattern'=>'/^[\w\s,]+$/', 'message'=>'Tags can only contain word characters.'],
+			['tags', 'normalizeTags'],
+		];
 	}
 
 
@@ -45,7 +45,7 @@ class Post extends ActiveRecord
 	
 		
 	public function getAuthor() {
-		return $this->hasOne('\common\models\User', array('id' => 'author_id'));
+		//return $this->hasOne('\common\models\User', array('id' => 'author_id'));
 	}
 	
 	/**
@@ -130,7 +130,7 @@ class Post extends ActiveRecord
 		if (parent::beforeSave($insert)) {
 			if ($insert) {
 				$this->create_time=$this->update_time=time();
-				$this->author_id=Yii::$app->user->identity->id;
+				//$this->author_id=Yii::$app->user->identity->id;
 			}
 			else {
 				$this->update_time=time();
@@ -146,8 +146,8 @@ class Post extends ActiveRecord
 	 */
 	public function afterSave($insert)
 	{
-		parent::afterSave($insert);
-		Tag::updateFrequency($this->_oldTags, $this->tags);
+		//parent::afterSave($insert);
+		//Tag::updateFrequency($this->_oldTags, $this->tags);
 	}
 
 	/**
